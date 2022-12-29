@@ -199,7 +199,7 @@ export const createUser = async (req, res) => {
         subject: "Account created",
         html: `
         <h1>Hi ${name}</h1>
-        <p>Your CMS account has been created successfully.</p>
+        <p>Your onurtaskiran.com blog account has been created successfully.</p>
         <h3>Your login details</h3>
         <p style="color:red;">Email: ${email}</p>
         <p style="color:red;">Password: ${password}</p>
