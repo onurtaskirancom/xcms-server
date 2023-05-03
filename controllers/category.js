@@ -56,8 +56,9 @@ export const postsByCategory = async (req, res) => {
     const category = await Category.findOne({ slug });
 
     const posts = await Post.find({ categories: category._id })
-      .populate("featuredImage postedBy")
-      .limit(20);
+      .populate('featuredImage postedBy')
+      .sort({ createdAt: -1 });
+      // .limit(20);
 
     res.json({ posts, category });
   } catch (err) {

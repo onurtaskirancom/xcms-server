@@ -56,8 +56,9 @@ export const postsByTag = async (req, res) => {
     const tag = await Tag.findOne({ slug });
 
     const posts = await Post.find({ tags: tag._id })
-      .populate("featuredImage postedBy")
-      .limit(20);
+      .populate('featuredImage postedBy')
+      .sort({ createdAt: -1 });
+    // .limit(20);
 
     res.json({ posts, tag });
   } catch (err) {
